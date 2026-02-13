@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  wings:
+    image: ghcr.io/pterodactyl/wings:latest
+    container_name: wings
+    restart: always
+    network_mode: "host"
+    privileged: true
+    volumes:
+      - /var/lib/pterodactyl/volumes:/var/lib/pterodactyl/volumes:rw
+      - /etc/pterodactyl:/etc/pterodactyl:ro
